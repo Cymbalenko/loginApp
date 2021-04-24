@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name" translatable="false">loginApp</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log in</string>
+    <string name="format_welcome">Welcome %s!</string>
+    <string name="error_login_incorrect_credentials">Incorrect login or password</string>
+    <string name="log_out">Log out</string>
+
+</resources>
