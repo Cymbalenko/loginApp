@@ -14,6 +14,7 @@ import com.s95ammar.loginapp.R
 import com.navsupport.loginapp.ui.activity.SharedViewModel
 import com.navsupport.loginapp.ui.login.LoginFragment
 import com.navsupport.loginapp.ui.login.common.WelcomeUiEvent
+import com.navsupport.loginapp.ui.paymentMethods.PaymentMethodsFragment
 import com.navsupport.loginapp.util.Event
 
 class WelcomeFragment : Fragment() {
@@ -33,6 +34,7 @@ class WelcomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val welcomeTextView = view.findViewById<TextView>(R.id.welcome_text_view)
         val logoutButton = view.findViewById<Button>(R.id.logout_button)
+        val paymentButton = view.findViewById<Button>(R.id.choose_payment_button)
         sharedViewModel.login.observe(viewLifecycleOwner) { login ->
             welcomeTextView.text = getString(R.string.format_welcome, login)
         }
@@ -40,12 +42,18 @@ class WelcomeFragment : Fragment() {
             viewModel.onLogout()
         }
 
-        viewModel.logout.observe(viewLifecycleOwner) { login ->
+        viewModel.logoutEvent.observe(viewLifecycleOwner) { login ->
             navigateToLoginFragment()
         }
 
         viewModel.uiEvent.observe(viewLifecycleOwner) { event ->
             handleEvent(event)
+        }
+        paymentButton.setOnClickListener {
+            viewModel.onPaymentMethods()
+        }
+        viewModel.paymentEvent.observe(viewLifecycleOwner) { p ->
+            navigateToPaymentMethodsFragment()
         }
     }
     private fun handleEvent(event: Event<WelcomeUiEvent>) {
@@ -64,6 +72,11 @@ class WelcomeFragment : Fragment() {
     private fun navigateToLoginFragment() {
         parentFragmentManager.beginTransaction()
             .replace(R.id.container, LoginFragment())
+            .commit()
+    }
+    private fun navigateToPaymentMethodsFragment() {
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.container, PaymentMethodsFragment())
             .commit()
     }
 }

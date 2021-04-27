@@ -6,5 +6,10 @@
     <string name="format_welcome">Привет, %s!</string>
     <string name="error_login_incorrect_credentials">Неправильный логин или пароль</string>
     <string name="log_out">Выйти</string>
+    <string name="choose_payment_method">Выберите тип оплаты</string>
+    <string name="bank_transfer">Банковский перевод</string>
+    <string name="cash">Наличные</string>
+    <string name="crypto">Криптовалюта</string>
+    <string name="credit_card">Кредитная карта</string>
 
 </resources>
