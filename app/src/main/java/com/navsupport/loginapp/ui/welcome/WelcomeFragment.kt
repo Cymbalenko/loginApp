@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.core.os.bundleOf
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
@@ -14,9 +13,7 @@ import androidx.fragment.app.viewModels
 import com.s95ammar.loginapp.R
 import com.navsupport.loginapp.ui.activity.SharedViewModel
 import com.navsupport.loginapp.ui.login.LoginFragment
-import com.navsupport.loginapp.ui.login.common.LoginUiEvent
-import com.navsupport.loginapp.ui.login.common.LogoutUiEvent
-import com.navsupport.loginapp.ui.welcome.common.WelcomeScreenKeys
+import com.navsupport.loginapp.ui.login.common.WelcomeUiEvent
 import com.navsupport.loginapp.util.Event
 
 class WelcomeFragment : Fragment() {
@@ -51,15 +48,15 @@ class WelcomeFragment : Fragment() {
             handleEvent(event)
         }
     }
-    private fun handleEvent(event: Event<LogoutUiEvent>) {
-        event.getIfNotHandled()?.let { logoutEvent ->
-            when (logoutEvent) {
-                is LogoutUiEvent.Loading -> {
+    private fun handleEvent(event: Event<WelcomeUiEvent>) {
+        event.getIfNotHandled()?.let { welcomeEvent ->
+            when (welcomeEvent) {
+                is WelcomeUiEvent.Loading -> {
                     val progressBar = view?.findViewById<ProgressBar>(R.id.loading_progress_bar_logout)
                     val logoutButton = view?.findViewById<Button>(R.id.logout_button)
 
-                    progressBar?.isVisible = logoutEvent.isLoading
-                    logoutButton?.isGone = logoutEvent.isLoading
+                    progressBar?.isVisible = welcomeEvent.isLoading
+                    logoutButton?.isGone = welcomeEvent.isLoading
                 }
             }
         }
