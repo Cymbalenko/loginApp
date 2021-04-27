@@ -36,5 +36,13 @@
         android:layout_marginVertical="8dp"
         android:indeterminateTint="@color/black"
         android:visibility="gone" />
-
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/choose_payment_button"
+        style="@style/my_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginVertical="8dp"
+        android:text="@string/choose_payment_method"
+        app:drawableTint="@color/purple_200" />
 </androidx.appcompat.widget.LinearLayoutCompat>

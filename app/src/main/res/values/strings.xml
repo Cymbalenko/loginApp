@@ -6,5 +6,11 @@
     <string name="format_welcome">Welcome %s!</string>
     <string name="error_login_incorrect_credentials">Incorrect login or password</string>
     <string name="log_out">Log out</string>
+    <string name="choose_payment_method">Choose payment method</string>
+    <string name="bank_transfer">Bank transfer</string>
+    <string name="cash">Cash</string>
+    <string name="credit_card">Credit card</string>
+    <string name="crypto">Crypto currency</string>
+    <string name="google_pay" translatable="false">Google pay</string>
 
 </resources>
