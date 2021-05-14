@@ -11,5 +11,6 @@
     <string name="cash">Наличные</string>
     <string name="crypto">Криптовалюта</string>
     <string name="credit_card">Кредитная карта</string>
+    <string name="payment_selected">Выбраная оплата</string>
 
 </resources>

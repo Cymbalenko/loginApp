@@ -11,5 +11,6 @@
     <string name="cash">Готівка</string>
     <string name="credit_card">Кредитна картка</string>
     <string name="crypto">Криптовалюта</string>
+    <string name="payment_selected">Обраній метод сплати</string>
 
 </resources>

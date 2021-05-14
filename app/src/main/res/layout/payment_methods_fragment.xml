@@ -7,10 +7,10 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/payments_recyclerview"
+        android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="8dp"
-        tools:listitem="@layout/item_payment">
-    </androidx.recyclerview.widget.RecyclerView>
+        tools:listitem="@layout/item_payment"/>
 
 </FrameLayout>

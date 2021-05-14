@@ -12,5 +12,6 @@
     <string name="credit_card">Credit card</string>
     <string name="crypto">Crypto currency</string>
     <string name="google_pay" translatable="false">Google pay</string>
+    <string name="payment_selected">Payment selected</string>
 
 </resources>

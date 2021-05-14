@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private fun addLoginFragment() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, LoginFragment())
+            .addToBackStack(null)
             .commit()
     }
 

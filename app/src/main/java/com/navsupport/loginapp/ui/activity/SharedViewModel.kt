@@ -11,8 +11,8 @@ class SharedViewModel : ViewModel() {
 
     val login: LiveData<String> = _login
 
-    fun setLogin(login: String) {
-        _login.value = login
+    fun setLogin(login: String?) {
+        _login.value = login!!
         Log.d("SharedViewModel", this.login.value.toString())
     }
 }
